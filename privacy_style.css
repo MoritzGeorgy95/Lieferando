@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.privacy-content {
+    height: auto;
+    margin: 20px 10% 30px 10%;
+}
+
+.privacy-content h1 {
+    font-size: 1.5rem;
+}
+
+.privacy-content h2 {
+    font-size: 1.2rem;
+}
+
+.privacy-content p {
+    font-size: 1rem;
+    color: #777777;
+}
+
+.privacy-content ul {
+    font-size: 1rem;
+    color: #777777;
+}
+
+@media screen and (max-width: 900px) {
+    .responsive-navbar {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        box-shadow: 0 4px 2px -2px rgb(0 0 0 / 15%);
+        width: 100%;
+    }
+
+    .responsive-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-bottom: 0.5rem;
+    }
+
+    .responsive-wrapper a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: black;
+    }
+
+
+}

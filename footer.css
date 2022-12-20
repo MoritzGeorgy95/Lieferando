@@ -1,0 +1,17 @@
+/* footer */
+footer {
+    background: #EFEDEA;
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
+} 
+
+footer h4 {
+    cursor: pointer;
+    transition: all 225ms ease-in-out;
+}
+
+footer h4:hover {
+    color: rgb(255, 128, 0);
+}

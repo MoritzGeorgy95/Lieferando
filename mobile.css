@@ -1,0 +1,64 @@
+/* responsive design*/
+
+@media screen and (min-width: 951px) {
+    .content-right {
+        display: block;
+    }
+}
+@media screen and (max-width: 950px) {
+
+    .content-left {
+        width: 100%;
+    }
+
+    .content-right {
+        width: unset;
+        width: 60vw;
+        position: fixed;
+        top: 5.3em;
+        right: 0;
+        background: white;
+        z-index: 99;
+        height: unset;
+        border-left: 1px solid #777;
+        border-bottom: 1px solid #777;
+    }
+
+    #sum-container button {
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+    .pizza-container img:last-of-type {
+        display: none;
+    }
+
+    .product-menu {
+        flex-direction: column;
+    }
+
+    .product-menu a {
+        margin-top: 1rem;
+    }
+
+    .icon-container i {
+        width: 20px;
+        height: 20px;
+    }
+
+    .tooltip {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .content-right {
+        width: 100%;
+    }
+    .bi-arrow-up-circle-fill {
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+}

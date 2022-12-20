@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.impressum-content{
+ height: auto;
+ margin: 20px 10% 30px 10%;
+}
+
+.impressum-content h1{
+    font-size: 1.5rem;
+}
+.impressum-content h2{
+    font-size: 1.2rem;
+}
+
+.impressum-content p{
+    font-size: 1rem ;
+    color: #777777;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MyDelivery</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/URL-icon" href="images/icons/shopping-basket.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="mobile.css" />
+  </head>
+
+  <!-- page content -->
+  <body onload="init(); includeHTML()" onscroll="showGoUpButton()">
+    <!-- header -->
+    <header id="header" class="flex-row shadow" w3-include-html="templates/header.html">
+    </header>
+    <main class="flex-row">
+      <div class="content-left">
+        <div class="pizza-container">
+          <img src="images/pizza.jpg" />
+          <img src="images/icons/Restaurant.png" class="shadow" />
+        </div>
+        <div class="review-container flex-row">
+          <div>
+            <h2>Mikado's Pizza</h2>
+            <br />
+            <div class="flex-row-standard review">
+              <i class="bi bi-star-fill orange"></i>
+              <i class="bi bi-star-fill orange"></i>
+              <i class="bi bi-star-fill orange"></i>
+              <i class="bi bi-star-fill orange"></i>
+              <i class="bi bi-star-fill"></i>
+              <p>(782 Bewertungen)</p>
+            </div>
+          </div>
+          <div class="flex-row-standard icon-container">
+            <i class="bi bi-info-circle" onclick="showOverlay()"></i>
+            <i class="bi bi-heart-fill" onclick="fillHeart();" id="heart"></i>
+          </div>
+        </div>
+        <!-- Menu -->
+        <nav class="product-menu shadow" id="menu">
+          <a href="#Pizzas" onclick="showGoUpButton()">Pizzas</a>
+          <a href="#Pasta" onclick="showGoUpButton()">Pasta</a>
+          <a href="#Nachtisch" onclick="showGoUpButton()">Nachtisch</a>
+          <a href="#Getränke" onclick="showGoUpButton()">Getränke</a>
+        </nav>
+        <div id="product-container"></div>
+      </div>
+      <!-- Shopping-basket -->
+      <div class="content-right flex-column" id="content-right">
+        <div id="empty-basket"></div>
+        <div id="product-basket-container"></div>
+        <div id="sum-container"></div>
+      </div>
+    </main>
+    <footer w3-include-html="templates/footer.html">
+
+    </footer>
+    <!-- main code ends here -->
+    <!-- back to top button -->
+
+    <a href="#header">
+      <i class="bi bi-arrow-up-circle-fill d-none" id="goUp"></i>
+    </a>
+
+    <!-- Overlay -->
+    <div class="overlay flex-row-standard d-none" id="overlay">
+      <!-- Restaurant Info -->
+      <div class="tooltip flex-column-standard">
+        <div class="flex-row-between">
+          <h3 class="text-center">Mikado's Restaurant</h3>
+          <h4 class="close-overlay" onclick="closeOverlay();">X</h4>
+        </div>
+        <p class="description restaurant-info">
+          Mikado's Restaurant ist ein familiengeführtes italienisches
+          Restaurant, das seit 1957 in der Konstanzer Innenstadt zu finden ist.
+          Unsere Spezialität sind Pizzas aus dem Steinofen, welche unseren
+          Gästen backfrisch serviert werden.
+        </p>
+        <div class="overflow">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.586569142447!2d9.180206532092182!3d47.67302742482503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af7a9e170ea57%3A0x4d201c0d9fc91db6!2sLuisenstra%C3%9Fe%202%2C%2078464%20Konstanz!5e0!3m2!1sde!2sde!4v1670953727243!5m2!1sde!2sde"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="flex-row-standard">
+            <div class="flex-row timetable-container">
+              <i class="bi bi-stopwatch"></i>
+              <h4>Lieferzeiten</h4>
+            </div>
+          </div>
+          <div class="flex-column-standard table">
+            <div class="flex-row-between table-row">
+              <p class="description">Montag</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Dienstag</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Mittwoch</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Donnerstag</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Freitag</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Samstag</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Sonntag</p>
+              <p class="description">10:00 Uhr - 23:00 Uhr</p>
+            </div>
+          </div>
+          <div class="flex-row-standard">
+            <div class="flex-row timetable-container">
+              <i class="bi bi-bicycle"></i>
+              <h4>Lieferkosten</h4>
+            </div>
+          </div>
+          <div class="flex-column-standard table">
+            <div class="flex-row-between table-row">
+              <p class="description">Mindestbestellwert</p>
+              <p class="description">keinen</p>
+            </div>
+            <div class="flex-row-between table-row">
+              <p class="description">Lieferkosten</p>
+              <p class="description">4.50€</p>
+            </div>
+          </div>
+          <div class="flex-row-standard">
+            <div class="flex-row timetable-container">
+              <i
+                class="bi bi-cash"
+                style="color: rgb(255, 128, 0) !important"
+              ></i>
+              <h4>Bezahlmethoden</h4>
+            </div>
+          </div>
+          <div class="flex-column-standard table" style="margin-bottom: 1rem">
+            <div class="flex-row-standard table-row payment-container">
+              <div class="flex-column-standard">
+                <i class="bi bi-paypal"></i>
+                <p class="description">Paypal</p>
+              </div>
+              <div class="flex-column-standard">
+                <i class="bi bi-credit-card"></i>
+                <p class="description">Kreditkarte</p>
+              </div>
+              <div class="flex-column-standard">
+                <i class="bi bi-cash"></i>
+                <p class="description">Bargeld</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script files -->
+    <script src="JSON.js"></script>
+    <script src="script.js" async defer></script>
+  </body>
+</html>

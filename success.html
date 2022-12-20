@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="success.css" />
+    <title>Success</title>
+  </head>
+  <body onload="renderPurchaseDetails();">
+      <div class="animation-container" id="animation-container">
+        <img class="truck-image" src="images/icons/logo.png" />
+        <h2 class="processing">Bestellung wird verarbeitet...</h2>
+      </div>
+      <div id="confirmation-container" class="d-none">
+        <div class="flex-row-standard">
+          <img src="images/icons/shopping-basket.png" />
+        </div>
+        <h2>Bestellung erfolgreich</h2>
+        <p>Bestellnummer: 89340928233</p>
+        <div class="Bestellwert">
+          <p>Bestellwert:</p>
+          &nbsp
+          <p id="Bestellwert"></p>
+        </div>
+        <p>Adresse: Musterhausen 7a, 898979</p>
+        <p>Empfänger: Max Mustermann</p>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>

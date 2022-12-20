@@ -1,0 +1,65 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.animation-container {
+    width: 50vw;
+    height: 50vh;
+    background: rgb(255, 128, 0);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+.truck-image {
+    animation: truck 4s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes truck {
+
+    100% {
+        left: 100%;
+    }
+}
+
+.processing {
+    margin-bottom: 6.5rem;
+    color: white;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.flex-row-standard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bestellwert {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.Bestellwert p {
+    margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+    .animation-container {
+        width: 90vw;
+    }
+}

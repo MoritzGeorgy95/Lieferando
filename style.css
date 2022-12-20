@@ -1,0 +1,465 @@
+/** Lieferando Project 2022 */
+
+/* global classes */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.flex-row-standard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.flex-row-start {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-column-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-standard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.description {
+    font-size: 1rem;
+    color: #777777;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.orange {
+    color: rgb(255, 128, 0);
+}
+
+.red {
+    color: red !important;
+}
+
+.shadow {
+    box-shadow: 0 2px 2px 1px rgb(0 0 0 / 14%);
+}
+
+/* main section */
+
+/* content left */
+
+.content-left {
+    width: 70%;
+    border-right: 2px solid #777777;
+}
+
+/* Pizza picture */
+.pizza-container {
+    position: relative;
+    width: 100%;
+    height: 22vh;
+}
+
+.pizza-container img:first-of-type {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* Restaurant logo */
+.pizza-container img:nth-of-type(2) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background: white;
+    transform: translate(-50%, 50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+}
+
+/* Star Reviews */
+.review-container {
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.review-container h2 {
+    margin: 0;
+}
+
+.review-container i:last-of-type {
+    color: #777777;
+}
+
+.review p {
+    margin: 0;
+    margin-left: 1rem;
+    color: rgb(255, 128, 0);
+}
+
+.review span:last-of-type {
+    color: #777777;
+}
+
+/* I icon and Heart icon */
+
+.icon-container:first-of-type {
+    position: relative;
+
+}
+
+.icon-container i {
+    color: #777777;
+    transition: all 225ms ease-in-out;
+    font-size: 1.3rem;
+    background: rgb(249, 247, 245);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container i:first-of-type {
+    position: relative;
+    margin-right: 1rem;
+}
+
+.icon-container i:first-of-type:hover {
+    color: rgb(255, 128, 0);
+    cursor: pointer;
+
+}
+
+.icon-container i:nth-of-type(2):hover {
+    cursor: pointer;
+
+}
+
+/* overlay if someone cklick on Info */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 65%);
+    z-index: 999;
+}
+
+.close-overlay:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+.tooltip {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 47vw;
+    height: 75vh;
+}
+
+.tooltip i {
+    font-size: 1.3rem;
+    margin-right: 1rem !important;
+    color: rgb(255, 128, 0);
+}
+
+.tooltip i:last-of-type {
+    margin-right: 0;
+}
+
+.bi-paypal {
+    color: blue !important;
+}
+
+.bi-credit-card {
+    color: black !important;
+}
+
+.bi-cash:last-of-type {
+    color: rgb(2, 174, 2) !important;
+}
+
+
+
+iframe {
+    width: 100%;
+    height: 95%;
+    border: none;
+}
+
+.flex-row-between {
+    width: 95%;
+}
+
+.timetable-container {
+    width: 95%;
+    align-items: center;
+}
+
+
+.restaurant-info {
+    margin-top: 0;
+    padding-bottom: 1rem;
+    width: 95%;
+    border-bottom: 2px solid rgb(255, 128, 0);
+
+}
+
+.overflow {
+    overflow: scroll;
+    width: 100%;
+}
+
+.table-row {
+    background: rgb(249, 247, 245);
+    width: 95%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.table-row:first-of-type {
+    border-radius: 20px 20px 0 0;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.payment-container {
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+/* Menu */
+
+.product-menu {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    background: rgb(249, 247, 245)
+}
+
+.category {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    background: rgb(249, 247, 245);
+}
+
+.category h3 {
+    margin: 0;
+}
+
+.product-menu a {
+    margin-right: 15%;
+    text-decoration: none;
+    color: #777777;
+}
+
+.product-menu a:hover {
+    color: rgb(255, 128, 0);
+    transition: all 225ms ease-in-out;
+}
+
+#product-container {
+    margin-top: 1rem;
+}
+
+.product {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.product h3 {
+    margin: 0;
+}
+
+.product i {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 5px;
+    background: rgb(249, 247, 245);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product i:hover {
+    transform: rotate(360deg);
+    transition: all 725ms ease-in-out;
+    border: none;
+}
+
+/* contet right (shopping basket)*/
+
+
+.content-right {
+    position: sticky;
+    top: 0; 
+    right: 0;
+    width: 30%;
+    height: 100%;
+}
+
+
+
+.content-right h3 {
+    margin: 0;
+    padding: 1rem 0 1rem 0;
+}
+
+
+.shopping-basket-container {
+    margin-top: 4rem;
+}
+
+.shopping-basket-container img {
+    width: 60px;
+    height: 60px;
+}
+
+/* added products */
+
+.basket-item {
+    padding: 1rem;
+    justify-content: space-between;
+    border-bottom: 1px solid #777777;
+}
+
+.basket-item i {
+    margin-left: 0.5rem;
+    color: rgb(255, 128, 0);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    cursor: pointer;
+
+}
+
+.basket-item i:hover {
+    transform: scale(1.3);
+
+}
+
+.basket-item img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.basket-item img:hover {
+    transform: scale(1.2);
+}
+
+.quantity {
+    margin-right: 0.5rem;
+}
+
+#sum-container {
+    padding-left: 1rem;
+    padding-right: 1.6rem;
+    margin-top: 1rem;
+}
+
+.sum-item {
+    justify-content: space-between;
+    width: 100%;
+}
+
+#sum-container button {
+    width: 75%;
+    color: white;
+    font-size: 1.2rem;
+    background: rgb(255, 128, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 0 10px 0;
+    margin-top: 1rem;
+    transition: all 225ms ease-in-out;
+}
+
+#sum-container button:hover {
+    background: rgb(229, 115, 1);
+    cursor: pointer;
+}
+
+.d-none-regular {
+    display: none;
+}
+
+.plus-container {
+    margin-top: .5rem;
+}
+
+.plus-container i:first-of-type {
+    margin-left: 0;
+}
+/* back to top button */
+
+.bi-arrow-up-circle-fill {
+    color: rgb(255, 128, 0);
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    position: sticky;
+    bottom: 10px;
+    left: 95vw;
+}
