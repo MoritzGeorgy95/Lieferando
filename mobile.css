@@ -2,7 +2,7 @@
 
 @media screen and (min-width: 951px) {
     .content-right {
-        display: block;
+        display: block !important;
     }
 }
 @media screen and (max-width: 950px) {
@@ -10,8 +10,9 @@
     .content-left {
         width: 100%;
     }
-
+ 
     .content-right {
+        display: none;
         width: unset;
         width: 60vw;
         position: fixed;
@@ -22,6 +23,10 @@
         height: unset;
         border-left: 1px solid #777;
         border-bottom: 1px solid #777;
+    }
+
+    .shopping-cart-mobile {
+        display: inline !important;
     }
 
     #sum-container button {
@@ -58,7 +63,5 @@
         width: 100%;
     }
     .bi-arrow-up-circle-fill {
-        left: 50vw;
-        transform: translateX(-50%);
-    }
+        display: none; }
 }

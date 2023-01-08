@@ -34,17 +34,6 @@ header .heading {
     border-bottom: 2px solid white;
 }
 
-.bi-cart4 {
-    font-size: 1.8rem;
-    display: none;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 950px) {
-    .bi-cart4 {
-        display: block;
-    }
-}
 
 @media screen and (max-width: 780px) {
     .adress {

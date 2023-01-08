@@ -5,6 +5,7 @@ footer {
     justify-content: space-around;
     height: 100px;
     align-items: center;
+    margin-bottom: -4rem;
 } 
 
 footer h4 {

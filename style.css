@@ -463,3 +463,17 @@ iframe {
     bottom: 10px;
     left: 95vw;
 }
+
+.shopping-cart-mobile {
+    color: white;
+    font-size: 1.2rem;
+    background: rgb(255, 128, 0);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    position: sticky;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}

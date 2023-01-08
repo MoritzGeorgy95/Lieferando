@@ -23,7 +23,7 @@ body {
 .truck-image {
     animation: truck 4s linear infinite;
     position: absolute;
-    top: 0;
+    top: 4rem;
     left: 0;
 }
 
@@ -61,5 +61,15 @@ body {
 @media screen and (max-width: 750px) {
     .animation-container {
         width: 90vw;
+    }
+
+    .truck-image {
+        top: 2rem;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .processing {
+        margin-left: 1rem;
     }
 }

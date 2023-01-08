@@ -38,7 +38,6 @@ function fillHeart() {
 }
 
 //include templates
-
 async function includeHTML() {
   let includeElements = document.querySelectorAll("[w3-include-html]");
   for (let i = 0; i < includeElements.length; i++) {
@@ -139,16 +138,20 @@ function init() {
 function renderProducts(array, index) {
   productContainer.innerHTML += `<div class="category shadow" id="${categories[index]}"><h3>${categories[index]}</h3></div>`;
   for (let i = 0; i < array.length; i++) {
-    productContainer.innerHTML += /*html*/ `
-          <div class="product flex-column shadow">
-              <h3>${array[i].name}</h3>    
-              <p class="description">${array[i].description}</p>
-              <p class="orange"><b>${array[i].price} €</b</p>
-              <i class="bi bi-plus-lg" onclick="addProduct('${encodeURIComponent(
-                JSON.stringify(array)
-              )}', ${i})"></i>
-          </div>`;
+    productContainer.innerHTML += productHTML(array, i);
   }
+}
+
+// template functions
+
+function productHTML(array, i) {
+  return /*html*/ `
+  <div class="product flex-column shadow">
+      <h3>${array[i].name}</h3>    
+      <p class="description">${array[i].description}</p>
+      <p class="orange"><b>${array[i].price} €</b</p>
+      <i class="bi bi-plus-lg" onclick="addProduct('${encodeURIComponent(JSON.stringify(array))}', ${i})"></i>
+  </div>`;
 }
 
 // render shopping basket
@@ -201,6 +204,8 @@ function renderShoppingBasket() {
 function renderSum() {
   let prices = getPrices();
   let quantities = getQuantities();
+  let mobileButton= document.getElementsByClassName('shopping-cart-mobile')[0];
+  if(localStorage.length > 0) {
   for (let i = 0; i < prices.length; i++) {
     prices[i] = prices[i] * quantities[i];
   }
@@ -224,6 +229,10 @@ function renderSum() {
       <button onclick="location.href='success.html'; storeFinalSum()">Bestellen (${finalSum} €)</button>
     </div>
   `;
+  mobileButton.innerHTML = `Warenkorb: ${finalSum} €`; }
+  else {
+    mobileButton.innerHTML = `Warenkorb: 00.00 €`;
+  }
 }
 
 //add product to shopping basket
@@ -331,4 +340,20 @@ function renderPurchaseDetails() {
 function storeFinalSum() {
   let finalSum = getElement("final-sum").innerHTML;
   localStorage.setItem("Bestellwert", finalSum);
+}
+
+let mobileMenuOpen= false;
+function showShoppingCart() {
+  if (!mobileMenuOpen) {
+    mobileMenuOpen= true;    
+    document.getElementsByClassName('content-right')[0].style.display= "block";
+    document.getElementsByClassName('shopping-cart-mobile')[0].innerHTML = "Schließen X"
+  }
+
+  else {
+    document.getElementsByClassName('content-right')[0].style.display= "none";
+    mobileMenuOpen= false;
+    renderSum();
+  }
+
 }
